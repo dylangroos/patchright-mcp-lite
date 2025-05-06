@@ -45,6 +45,7 @@ const server = new McpServer({
 // Tool 1: Browse - Launch browser and visit a URL
 server.tool(
   "browse",
+  "Browse to a URL and return the page title and visible text",
   {
     url: z.string().url().describe("The URL to navigate to"),
     headless: z.boolean().default(false).describe("Whether to run the browser in headless mode"),
@@ -131,6 +132,7 @@ server.tool(
 // Tool 2: Interact - Perform simple interactions on a page
 server.tool(
   "interact",
+  "Perform simple interactions on a page",
   {
     browserId: z.string().describe("Browser ID from a previous browse operation"),
     pageId: z.string().describe("Page ID from a previous browse operation"),
@@ -214,6 +216,7 @@ server.tool(
 // Tool 3: Extract - Get information from the current page
 server.tool(
   "extract",
+  "Extract information from the current page as text, html, or screenshot",
   {
     browserId: z.string().describe("Browser ID from a previous browse operation"),
     pageId: z.string().describe("Page ID from a previous browse operation"),
@@ -292,6 +295,7 @@ server.tool(
 // Tool 4: Close - Close browser to free resources
 server.tool(
   "close",
+  "Close browser to free resources",
   {
     browserId: z.string().describe("Browser ID to close")
   },
