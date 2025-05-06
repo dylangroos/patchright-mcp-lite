@@ -19,7 +19,7 @@ const TEMP_DIR = path.join(os.tmpdir(), 'patchright-mcp');
 (async () => {
   try {
     await fs.mkdir(TEMP_DIR, { recursive: true });
-    console.log(`Temp directory created at: ${TEMP_DIR}`);
+    console.error(`Temp directory created at: ${TEMP_DIR}`);
   } catch (error) {
     console.error(`Error creating temp directory: ${error}`);
   }
@@ -47,7 +47,7 @@ server.tool(
   "browse",
   {
     url: z.string().url().describe("The URL to navigate to"),
-    headless: z.boolean().default(true).describe("Whether to run the browser in headless mode"),
+    headless: z.boolean().default(false).describe("Whether to run the browser in headless mode"),
     waitFor: z.number().default(1000).describe("Time to wait after page load (milliseconds)")
   },
   async ({ url, headless, waitFor }: { url: string; headless: boolean; waitFor: number }) => {
@@ -329,3 +329,14 @@ server.tool(
     }
   }
 );
+
+async function main() {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  console.error("Weather MCP Server running on stdio");
+}
+
+main().catch((error) => {
+  console.error("Fatal error in main():", error);
+  process.exit(1);
+});
