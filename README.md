@@ -46,7 +46,7 @@ This MCP server wraps the Node.js version of Patchright to make its capabilities
 
 4. Install Chromium-Driver for Pathright:
    ```bash
-  npx patchright install chromium
+   npx patchright install chromium
    ```
 
 
