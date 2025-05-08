@@ -1,4 +1,5 @@
 # Patchright Lite MCP Server
+[![smithery badge](https://smithery.ai/badge/@dylangroos/patchright-mcp-lite)](https://smithery.ai/server/@dylangroos/patchright-mcp-lite)
 
 A streamlined Model Context Protocol (MCP) server that wraps the Patchright Node.js SDK to provide stealth browser automation capabilities to AI models. This lightweight server focuses on essential functionality to make it easier for simpler AI models to use.
 
@@ -27,6 +28,14 @@ This MCP server wraps the Node.js version of Patchright to make its capabilities
 - npm or yarn
 
 ## Installation
+
+### Installing via Smithery
+
+To install Patchright Lite for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@dylangroos/patchright-mcp-lite):
+
+```bash
+npx -y @smithery/cli install @dylangroos/patchright-mcp-lite --client claude
+```
 
 1. Clone this repository:
    ```bash
